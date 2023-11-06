@@ -26,13 +26,19 @@ public class FixedTerminationEvent extends RepetitiveEvent {
      * </UL>
      * @param terminationInclusive the date when this event ends
      */
+
+     private LocalDate terminationInclusive ;
+
     public FixedTerminationEvent(String title, LocalDateTime start, Duration duration, ChronoUnit frequency, LocalDate terminationInclusive) {
          super(title, start, duration, frequency);
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        this.terminationInclusive = terminationInclusive ; 
+        long nbreOccu = frequency.between(start.toLocalDate(), terminationInclusive);
+        this.numberOfOccurrences = nbreOccu;
 
     }
 
+    private long numberOfOccurrences ; 
+    private LocalDate terminationDate;
     /**
      * Constructs a fixed termination event ending after a number of iterations
      *
@@ -49,8 +55,8 @@ public class FixedTerminationEvent extends RepetitiveEvent {
      */
     public FixedTerminationEvent(String title, LocalDateTime start, Duration duration, ChronoUnit frequency, long numberOfOccurrences) {
         super(title, start, duration, frequency);
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+       this.numberOfOccurrences = numberOfOccurrences ; 
+       terminationDate = start.toLocalDate().plus(numberOfOccurrences, frequency);
     }
 
     /**
@@ -58,13 +64,11 @@ public class FixedTerminationEvent extends RepetitiveEvent {
      * @return the termination date of this repetitive event
      */
     public LocalDate getTerminationDate() {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");   
+        return this.terminationDate ;  
     }
 
     public long getNumberOfOccurrences() {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        return this.numberOfOccurrences ; 
     }
         
 }
