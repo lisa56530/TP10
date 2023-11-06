@@ -6,15 +6,19 @@ import java.util.*;
 /**
  * Description : An agenda that stores events
  */
-public class Agenda {
+    public class Agenda {
+    private ArrayList <Event> e ; 
+
+    public Agenda () {
+    this.e = new ArrayList <Event> (); 
+}
     /**
      * Adds an event to this agenda
      *
      * @param e the event to add
      */
     public void addEvent(Event e) {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        this.add(e) ; 
     }
 
     /**
@@ -28,3 +32,4 @@ public class Agenda {
         throw new UnsupportedOperationException("Pas encore implémenté");
     }
 }
+rationException("Pas encore implémenté");
