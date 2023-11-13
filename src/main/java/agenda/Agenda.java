@@ -38,6 +38,37 @@ import java.util.*;
     }
 
 
+/**
+* Trouver les événements de l'agenda en fonction de leur titre
+     * @param title le titre à rechercher
+     * @return les événements qui ont le même titre
+     */
+    public List<Event> findByTitle(String title) {
+        ArrayList <Event> tagada = new ArrayList<Event> () ; 
+        for (Event event : e)   {
+            if (event.getTitle() == title ) {
+                tagada.add(event) ; 
+            }
+        }
+        return tagada ; 
+    }
+
+ /**
+     * Déterminer s’il y a de la place dans l'agenda pour un événement
+     * @param e L'événement à tester (on se limitera aux événements simples)
+     * @return vrai s’il y a de la place dans l'agenda pour cet événement
+     */
+    public boolean isFreeFor() {
+        if (taille>e.size()){
+            return true; 
+        }
+         else return false ; 
+    }
+        
+
+
+}
+
 
 
 
