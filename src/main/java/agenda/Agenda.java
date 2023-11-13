@@ -17,8 +17,8 @@ import java.util.*;
      *
      * @param e the event to add
      */
-    public void addEvent(Event e) {
-        this.add(e) ; 
+    public void addEvent(Event event) {
+        e.add(event) ; 
     }
 
     /**
@@ -27,9 +27,20 @@ import java.util.*;
      * @param day the day toi test
      * @return a list of events that occur on that day
      */
-    public List<Event> eventsInDay(LocalDate day) {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+    public ArrayList <Event>  eventsInDay(LocalDate day) {
+        ArrayList <Event> roudoudou = new ArrayList <Event> () ;
+        for (Event event : e){
+       if(event.isInDay(day)) {
+       roudoudou.add(event) ;
+       }
+        }
+        return roudoudou  ; 
     }
+
+
+
+
+
+
 }
-rationException("Pas encore implémenté");
+
