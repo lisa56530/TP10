@@ -17,7 +17,7 @@ import java.util.*;
      *
      * @param e the event to add
      */
-    public void addEvent(Event event) {
+   public void addEvent(Event event) {
         e.add(event) ; 
     }
 
