@@ -38,8 +38,8 @@ public class RepetitiveEvent extends Event {
      *
      * @param date the event will not occur at this date
      */
-    public void addException(LocalDate date) {
-      exception.add(date) ; 
+   public void addException(LocalDate date) {
+      exception.add(date) ;
 
     }
 
